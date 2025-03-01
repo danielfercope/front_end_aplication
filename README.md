@@ -1,11 +1,5 @@
 # front end aplication
 
-Desenvolvimento parcial usando Angular - presente
-em angular_project
-
-Angular CLI: 19.2.0
-Node: 22.9.0
-
 Desenvolvimento integral usando HTML, CSS e JS - presente em
 html_project.
 
