@@ -1,0 +1,139 @@
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        text-align: center;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .action-btn {
+        cursor: pointer;
+        font-size: 18px;
+        margin: 0 5px;
+    }
+    .detail {
+        color: blue;
+    }
+    .delete {
+        color: red;
+    }
+    .btn-container {
+        margin: 10px 0;
+    }
+    .btn {
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+    .pdf-btn {
+        background-color: red;
+    }
+    .excel-btn {
+        background-color: green;
+    }
+    .add-user-btn {
+        background-color: blue;
+    }
+    
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+    }
+    .modal-header, .modal-footer {
+        text-align: center;
+        padding: 10px;
+    }
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .modal-btn {
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+    .btn-danger {
+        background-color: red;
+        color: white;
+    }
+    .btn-success {
+        background-color: green;
+        color: white;
+    }
+
+    #searchInput {
+        margin: 10px 0;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+
+    .user-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    .modal-body {
+        display: flex;
+        align-items: center;
+    }
+
+    .confirm-text {
+        text-align: center; 
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: 100%; 
+    }
+
+    .modal-body form {
+        flex: 1;
+    }
+
+    .export-modal-content {
+        width: 300px;
+        text-align: center;
+    }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h2 style="text-align: center">Usuários</h2>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Buscar por nome ou email..." />
+    <div class="btn-container">
+        <button class="btn pdf-btn" onclick="exportToPDF()">
+            <i class="fas fa-file-pdf"></i> Exportar para PDF
+        </button>
+        <button class="btn excel-btn" onclick="openExportModal()">
+            <i class="fas fa-file-excel"></i> Exportar para Excel
+        </button>
+        <button class="btn add-user-btn" onclick="openAddUserModal()">Adicionar Usuário</button>
+    </div>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Avatar</th>
+                <th>Detalhar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+        </tbody>
+    </table>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Detalhes do Usuário</h3>
+            </div>
+            <div class="modal-body">
+                <img id="userAvatar" class="user-avatar" src="" alt="Avatar do usuário">
+                <form id="userForm">
+                    <input type="text" id="firstName" placeholder="Primeiro Nome" required />
+                    <input type="text" id="lastName" placeholder="Sobrenome" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <button type="button" onclick="updateUser()" class="btn btn-success">Salvar Alterações</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeDeleteModal()">&times;</span>
+                <h3>Confirmação de Exclusão</h3>
+            </div>
+            <div>
+                <h2 class="confirm-text">Tem certeza que deseja excluir este usuário?</h2>
+            </div>            
+            <div class="modal-footer">
+                <button class="modal-btn btn-danger" onclick="confirmDelete()">Excluir</button>
+                <button class="modal-btn btn-success" onclick="closeDeleteModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="exportModal" class="modal">
+        <div class="modal-content export-modal-content">
+            <h3>Escolher formato para exportação</h3>
+            <button class="modal-btn btn-success" onclick="exportToExcelType('xlsx')">XLSX</button>
+            <button class="modal-btn btn-success" onclick="exportToExcelType('csv')">CSV</button>
+            <button class="modal-btn btn-danger" onclick="closeExportModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeAddUserModal()">&times;</span>
+                <h3 class="confirm-text">Adicionar Novo Usuário</h3>
+            </div>
+            <div class="modal-body">
+                <form id="addUserForm">
+                    <input type="text" id="addFirstName" placeholder="Primeiro Nome" required />
+                    <input type="text" id="addLastName" placeholder="Sobrenome" required />
+                    <input type="email" id="addEmail" placeholder="Email" required />
+                    <div class="modal-footer" style="text-align: center; width: 100%;">
+                        <button type="button" onclick="addUser()" class="btn btn-success">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+
+</html>
